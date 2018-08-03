@@ -27,14 +27,21 @@ http://www.aaronstannard.com/introducing-nbench/
   かなり早い事になる。
 
 > C:\Work\Develop\CsvParserBenchmarks\Go>go test -bench . -benchmem
+
 > 2018/08/03 15:53:58 Start
+
 > 2018/08/03 15:53:58 Finish 124234
+
 > goos: windows
+
 > goarch: amd64
+
 > BenchmarkReadCsv-2      2018/08/03 15:53:58 Start
+
 > 2018/08/03 15:53:58 Finish 124234
+
 > 2000000000               0.09 ns/op            0 B/op          0 allocs/op
+
 > PASS
+
 > ok      _/C_/Work/Develop/CsvParserBenchmarks/Go        2.043s
-
-
