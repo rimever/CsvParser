@@ -23,25 +23,9 @@ http://www.aaronstannard.com/introducing-nbench/
 ### Go
 
 　注目している言語の一つ go言語で試した結果。
-  0.09ns = 9.0E-8 ms
-  かなり早い事になる。
 
-> C:\Work\Develop\CsvParserBenchmarks\Go>go test -bench . -benchmem
+>       10	 171999880 ns/op	45734149 B/op	  248498 allocs/op
 
-> 2018/08/03 15:53:58 Start
+171999880 ns/op = 172ms
 
-> 2018/08/03 15:53:58 Finish 124234
-
-> goos: windows
-
-> goarch: amd64
-
-> BenchmarkReadCsv-2      2018/08/03 15:53:58 Start
-
-> 2018/08/03 15:53:58 Finish 124234
-
-> 2000000000               0.09 ns/op            0 B/op          0 allocs/op
-
-> PASS
-
-> ok      _/C_/Work/Develop/CsvParserBenchmarks/Go        2.043s
+かなり早い事になる。
