@@ -31,9 +31,16 @@ import (
 )
 
 
+
 //BenchmarkReadCsv
 //Csv読込のベンチマークを行うための関数です。
 func BenchmarkReadCsv(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ReadCsvTest()
+	}
+}
+
+func ReadCsvTest() {
 	flag.Parse()
 	//読み込みファイル準備
 	readFilePath, err := os.Open("KEN_ALL.CSV")
@@ -45,7 +52,6 @@ func BenchmarkReadCsv(b *testing.B) {
 	reader.LazyQuotes = false
 	// ダブルクオートを厳密にチェックしない
 	reader.Comma = ','
-
 	log.Printf("Start")
 	rowCount := 0
 	for {
@@ -63,6 +69,6 @@ func BenchmarkReadCsv(b *testing.B) {
 		rowCount++
 	}
 	//	writer.Flush()
-	log.Printf("Finish %#v" , rowCount)
+	log.Printf("Finish %#v", rowCount)
 }
 
