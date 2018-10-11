@@ -13,6 +13,7 @@ namespace CsvParserBenchmarks
     /// <remarks>
     /// 参考のためのベンチマークです。
     /// </remarks>
+    [CsvExporter, RPlotExporter]
     public class CsvParserBenchmark
     {
         /// <summary>

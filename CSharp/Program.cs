@@ -16,6 +16,8 @@ namespace CsvParserBenchmarks
         static void Main(string[] args)
         {
             BenchmarkRunner.Run<CsvParserBenchmark>();
+            Console.WriteLine("何かキーを入力してください。終了します。");
+            Console.ReadKey();
         }
     }
 }
