@@ -52,7 +52,7 @@ namespace CsvHelperPractice
             string path = Path.Combine(RootDirectory, "Csv", "writer.csv");
             List<List<string>> lists = new List<List<string>>
             {
-                new List<string>() {"a" + Environment.NewLine + "b", "c", "d"}, new List<string>() {"e", "f", "g"}
+                new List<string>() {"a" + Environment.NewLine + "b", @"c""d", "e"}, new List<string>() {"e", "f", "g,h"}
             };
             using (var writer = new CsvWriter(new StreamWriter(path,false,Encoding.UTF8))
             {
@@ -63,14 +63,12 @@ namespace CsvHelperPractice
             })
             {
                 foreach (var list in lists)
-                {
-                    writer.Context.Record.Clear();
-                    writer.Context.Record.AddRange(list);
-                    // Quoteがうまく働かない
+                {    
+                    writer.WriteField(list.ToArray());
                     writer.NextRecord();
                 }
             }
-        }
+       }
        /// <summary>
        /// 
        /// </summary>
